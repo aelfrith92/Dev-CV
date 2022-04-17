@@ -26,6 +26,9 @@
 	background-color: #fff;
 }
 
+.bg-color-personal-info {
+	background-color: #f4f4f4;
+}
 /*--------------------------------------------Special paddings/margins/text */
 
 h1, h2, h3, h4 {
@@ -200,10 +203,6 @@ footer {
     color: #e84610;
 }
 
-/* .social-links {
-    padding-bottom: 15px;
-} */
-
 .social-links li a i {
     width: 32px;
     height: 32px;
@@ -222,4 +221,31 @@ footer {
 
 .social-links li a i:hover {
     background: #e84610;
+}
+
+/* ------------------------------------------Three reasons */
+
+.three-reasons-icon {
+	font-size: 26px;
+	color: #e67e22;
+}
+
+/* ------------------------------------------Personal Info */
+
+.personal-info-item {
+	clear: both;
+}
+
+.personal-info-item .key {
+	width: 30%;
+	vertical-align: top;
+}
+
+.personal-info-item .key p {
+	font-weight: 700;
+}
+
+.personal-info-item .value {
+	position: relative;
+	width: 60%;
 }
