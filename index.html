@@ -4,36 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
+    <script src="https://kit.fontawesome.com/393e73732d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Rosie</title>
 </head>
 <body>
     <header>
-        <div class="row no-gutters">
-            <a class="col-md-4 logo" href="02-index.html"></a>
+        <div class="row g-0">
+				<!-- g-0 class stands for no-gutters, namely, deleting spaces created by default 
+					by BS5 grid system. If not deleted, content in the container will show some 
+					space between COLUMNS, not elements.
+				-->
+            <a class="col-md-4 logo" href="#"></a>
             <div class="col-md-8">
-                <div class="row no-gutters bg-color-name-title">
+                <div class="row g-0 bg-color-name-title">
                     <div class="col heading">
                         <h1 class="name">Rosie Odenkirk</h1>
                         <h2 class="title"> Full Stack Developer</h2>
                     </div>
                 </div>
-                <div class="row no-gutters">
+                <div class="row g-0">
                     <div class="col">
                         <ul id="nav" class="list-inline menucontainer">
-                            <li class="col-6 col-sm-3 ui-menu-color-home list-inline-item">
-                                <a href="#"><span>Home</span></a>
+												<!-- 
+													list-inline: Remove a list’s bullets and apply some light margin 
+													with a combination of two classes, .list-inline and .list-inline-item.
+												-->
+                            <li class="col-6 col-sm-3 ui-menu-color-home list-inline-item menu-item">
+														<!-- ui-menu-color-home and similar ones define the item background color -->
+                                <a href="#" class="hvr-sweep-to-bottom"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
                             </li>
-                            <li class="col-6 col-sm-3 ui-menu-color-resume list-inline-item">
-                                <a href="#"><span>Resume</span></a>
+                            <li class="col-6 col-sm-3 ui-menu-color-resume list-inline-item menu-item">
+                                <a href="#" class="hvr-sweep-to-bottom"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span>Resume</span></a>
                             </li>
-                            <li class="col-6 col-sm-3 ui-menu-color-contact list-inline-item">
-                                <a href="#"><span>Contact</span></a>
+                            <li class="col-6 col-sm-3 ui-menu-color-contact list-inline-item menu-item">
+                                <a href="#" class="hvr-sweep-to-bottom"><i class="fa fa-comment-o" aria-hidden="true"></i><span>Contact</span></a>
                             </li>
-                            <li class="col-6 col-sm-3 ui-menu-color-download list-inline-item">
-                                <a href="#"><span>Download CV</span></a>
+                            <li class="col-6 col-sm-3 ui-menu-color-download list-inline-item menu-item">
+                                <a href="#" class="hvr-sweep-to-bottom"><i class="fa fa-download" aria-hidden="true"></i><span>Download CV</span></a>
                             </li>
                         </ul>
                     </div>
@@ -41,11 +51,64 @@
             </div>
         </div>
     </header>
-    <section>
-        
+    <section class="container-fluid">
+        <div class="row row-table">
+					<div class="col-md-8 bg-color-three-reasons section-column pt-0 px-4 pb-4">
+						<div class="row">
+							<div class="col">
+								<h3 class="section-heading uppercase mt-3 mb-5">About Me</h3>
+							</div>
+						</div>
+					</div>
+				</div>
     </section>
-    <footer>
-        
+    <footer class="container-fluid">
+			<div class="row pt-4">
+        <div class="col-sm-4">
+					<h5 class="uppercase general-sub">About</h5>
+					<p class="d-inline-block">
+						Sezione dedicata a una sintesi del profilo professionale
+					</p>
+				</div>
+        <div class="col-sm-4">
+					<h5 class="uppercase general-sub">Download</h5>
+					<p class="d-inline-block">
+						Need a printable version of my CV? Download it here.
+						<a href="#" target="_blank" class="cv-pdf">
+							<i class="fa fa-download p-1" aria-hidden="true"></i>
+							<span class="visually-hidden">Download link</span>
+							<!-- visually-hidden significa che l'elemento viene comunque rilevato
+							da tecnologie assistive e letto ad alta voce, ma comunque assente nel
+							contenuto della pagina -->
+						</a>
+					</p>
+				</div>
+        <div class="col-sm-4">
+					<h5 class="uppercase general-sub">Social</h5>
+					<p class="d-inline-block">
+						<ul class="list-inline social-links pb-3">
+							<li class="list-inline-item">
+								<a href="#" target="_blank">
+									<i class="fa fa-facebook" aria-hidden="true"></i>
+									<span class="visually-hidden">Facebook</span>
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="#" target="_blank">
+									<i class="fa fa-instagram" aria-hidden="true"></i>
+									<span class="visually-hidden">Instagram</span>
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="#" target="_blank">
+									<i class="fa fa-linkedin" aria-hidden="true"></i>
+									<span class="visually-hidden">LinkedIn</span>
+								</a>
+							</li>
+						</ul>
+					</p>
+				</div>
+			</div>
     </footer>
 </body>
 </html>

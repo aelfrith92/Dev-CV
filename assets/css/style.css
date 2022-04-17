@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 /*--------------------------------------------Colors*/
 
@@ -22,7 +22,42 @@
     background-color: #525252;
 }
 
-/*--------------------------------------------Heading*/
+.bg-color-three-reasons {
+	background-color: #fff;
+}
+
+/*--------------------------------------------Special paddings/margins/text */
+
+h1, h2, h3, h4 {
+	margin: 0;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.general-sub {
+	font-family: 'Exo', sans-serif;
+	font-weight: 300;
+	color: #fafafa;
+}
+
+.row-table {
+	display: table;
+}
+
+.section-column {
+	display: table-cell;
+/* 	padding: 0 30px 30px; */
+	float: none;
+}
+
+.section-heading {
+	font-family: "Exo", sans-serif;
+	font-weight: 300;
+}
+
+/*--------------------------------------------Heading */
 
 header {
     margin: 0;
@@ -60,15 +95,131 @@ header {
     color: #fff;
 }
 
+/* The following class removes margins for the lis of the
+navbar, set in bootstrap by default, overridden here */
 .list-inline-item:not(:last-child) {
     margin: 0;
 }
 
+/*
+When we display items inline, then the white space that's in our 
+HTML file becomes visible as a single space between our items.
+The way to solve this is to create a container with the font-size 
+of 0 so that the spaces are not displayed. So we're going to add 
+the menucontainer class to our <ul>. Then in our CSS, we'll target 
+it here, and we'll give that a font-size of 0, which will close up 
+the gaps between our items.
+*/
 .menucontainer {
     font-size: 0;
 }
 
+/*
+The problem is that means that all of our items will then have a 
+font-size of 0, so we can no longer see them. We can override this 
+by using our nav ID, targeting all the children lis and giving a 
+font-size of 14px. We'll then also just set the padding to 0 as 
+well because we want to have full control over that.
+*/
 #nav li {
     font-size: 14px;
     padding: 0;
+}
+
+/*
+Style the li items to make them more eye-catchy
+*/
+.menu-item {
+	height: 120px;
+	padding: 0;
+	text-align: center;
+}
+
+.menu-item a {
+	width: 100%;
+	text-decoration: none;
+	color: #fff;
+	height: 120px;
+}
+
+.menu-item i {
+	padding-top: 22px;
+	display: block;
+	color: #fafafa;
+	font-size: 26px;
+}
+
+.menu-item span {
+	display: block;
+	width: 100%;
+	padding-top: 5px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 300;
+	letter-spacing: 2px;
+}
+
+#nav {
+	margin: 0;
+}
+
+/*------------------------------------------Hover.css*/
+
+/* 
+The animation is based on empty content creater BEFORE
+the actual targeted element. So, to change colour, we need
+to target the empty content that can be observed in 
+Chrome Dev Tools
+*/
+.hvr-sweep-to-bottom:before {
+	background-color: rgba(0, 0, 0, 0.2);
+	height: 120px;
+}
+
+/* ------------------------------------------Footer */
+
+footer {
+	background-color: #525252;
+	color: #fafafa;
+	min-height: 120px;
+}
+
+.cv-pdf i {
+	font-size: 18px;
+	color: #fafafa;
+	text-align: center;
+	padding-left: 5px;
+	transition: all 0.35s ease-in-out;
+	-moz-transition: all 0.35s ease-in-out;
+	-webkit-transition: all 0.35s ease-in-out;
+	-o-transition: all 0.35s ease-in-out;
+}
+
+.cv-pdf i:hover {
+    color: #e84610;
+}
+
+/* .social-links {
+    padding-bottom: 15px;
+} */
+
+.social-links li a i {
+    width: 32px;
+    height: 32px;
+    padding: 12px 0;
+    border-radius: 50%;
+    font-size: 13px;
+    line-height: 7px;
+    text-align: center;
+    color: #fafafa;
+    background: #8f8f8f;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.social-links li a i:hover {
+    background: #e84610;
 }
