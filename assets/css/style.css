@@ -22,6 +22,15 @@
     background-color: #525252;
 }
 
+.ui-menu-color-github {
+    background-color: #1c4a6c;
+}
+
+.ui-menu-color-interests {
+    background-color: #e74c3c;
+}
+
+
 .bg-color-three-reasons {
 	background-color: #fff;
 }
@@ -340,6 +349,10 @@ button[type="submit"] {
     margin-bottom: 20px;
     color: #fafafa;
     background-color: #e84610;
+}
+
+#map {
+    height: 80%;
 }
 
 /* ----------------------------------------Media Queries */
