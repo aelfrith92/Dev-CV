@@ -45,6 +45,8 @@ function repoInformationHTML(repos) {
 }
 
 function fetchGitHubInformation(event) {
+  $('#gh-user-data').html('');
+  $('#gh-repo-data').html('');
 
   var username = $("#gh-username").val();
   if (!username) {
@@ -77,6 +79,7 @@ function fetchGitHubInformation(event) {
       // And we're going to store that in another variable called userData.
       var userData = firstResponse[0];
       var repoData = secondResponse[0];
+      console.log(repoData);
       // Then we can use our jQuery selectors to select the gh-user-data div and set the
       // HTML to the results of another function called userInformationHTML().
       $("#gh-user-data").html(userInformationHTML(userData));
@@ -98,3 +101,11 @@ function fetchGitHubInformation(event) {
       }
     });
 }
+
+// The next thing I want to do is have the octocat profile displaying when the page
+// is loaded, instead of just having an empty div.
+// To do this, we're going to use the documentReady() function in jQuery and execute
+// the fetchGitHubInformation() function when the DOM is fully loaded.
+// By just adding that one line in, we can see that when I refresh the page now,
+// octocat's profile is automatically displayed when the page is loaded.
+$(document).ready(fetchGitHubInformation);
