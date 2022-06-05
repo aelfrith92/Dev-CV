@@ -94,6 +94,27 @@ function fetchGitHubInformation(event) {
       if (errorResponse.status === 404) {
         $("#gh-user-data").html(
           `<h2>No info found for user ${username}</h2>`);
+      }
+      // We can't do too much about the fact that GitHub throttles their API, but what we can do is present a nicer and friendlier error message to our users when this happens.
+      // So in our fetchGitHubInformation() function, after we check for status of 404, we're now going to put an else if clause and check for the status of 403.
+      // 403 means forbidden.
+      // And this is the status code that GitHub returned when our access is denied.
+      // So in here, we're going to create a new variable called resetTime and set that to be a new date object.
+      // The date that we want to retrieve is actually stored inside our errorResponse inside the headers.
+      // And the particular header that we want to target is the X-RateLimit-Reset header.
+      // This is a header that's provided by GitHub to helpfully let us know when our quota will be reset and when we can start using the API again.
+      // This is presented to us as a UNIX timestamp.
+      // So to get it into a format we can read, we need to multiply it by 1000 and then turn it into a date object.
+      // And this will give us a valid readable date in our resetTime variable.
+      // Then all we need to do is take that resetTime variable and display it to our user.
+      // So we'll use jQuery to target our gh-user-data element.
+      // And then we'll set the HTML content of this element to our friendly error message.
+      else if (errorResponse.status === 403) {
+        var resetTime = new Date(errorResponse.getResponseHeader(
+          'X-RateLimit-Reset') * 1000);
+        $("#gh-user-data").html(
+          `<h4>Too many requests, please wait until ${resetTime.toLocaleTimeString()}</h4>`
+        );
       } else {
         console.log(errorResponse);
         $("#gh-user-data").html(
